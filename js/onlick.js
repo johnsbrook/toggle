@@ -11,6 +11,7 @@ function onClick() {
       if (event.target.className == "toggle bg-info mt-4") {
         valToggle();
         changeValue(event);
+        changeInnerHTML(event);
       }
     });
   }
@@ -39,6 +40,14 @@ function onClick() {
       event.target.value = false;
     }
     console.log("Event after: ", event.target.value);
+  }
+
+  function changeInnerHTML(event) {
+    if(val) {
+      event.target.innerHTML = "Click for Tea Menu"
+    } else {
+      event.target.innerHTML = "Click for Coffee Menu"
+    }
   }
 }
 

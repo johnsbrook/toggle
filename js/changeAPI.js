@@ -18,11 +18,14 @@ function changeAPI() {
     } else {
       API = "https://coffeeproducts.herokuapp.com/api/products/tea";
     }
+    console.log(API);
     callAPI(API)
   }
 
   function callAPI(API) {
-    
+    fetch(API)
+    .then((res) => res.json())
+    .then(res => console.log(res))
   }
 }
 
