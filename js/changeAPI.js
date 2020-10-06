@@ -3,29 +3,42 @@ function changeAPI() {
   var val = true;
   var API;
 
-
   function first() {
     document.body.addEventListener("click", function (event) {
       val = !val;
-      teaOrCoffee();
+      APIToggler();
     });
   }
 
-  function teaOrCoffee() {
-    
+  function APIToggler() {
     if (val) {
       API = "https://coffeeproducts.herokuapp.com/api/products/coffee";
     } else {
       API = "https://coffeeproducts.herokuapp.com/api/products/tea";
     }
     console.log(API);
-    callAPI(API)
+    callAPI(API);
   }
 
   function callAPI(API) {
+
+    const createNode = (elem) => {
+      return document.createElement(elem);
+    };
+    const appendNode = (parent, elem) => {
+      // console.log(elem)
+      parent.appendChild(elem);
+    };
+
+    var idNo = 0;
+
     fetch(API)
-    .then((res) => res.json())
-    .then(res => console.log(res))
+      .then((res) => res.json())
+      .then((d) => {
+          d.map((d) => {
+              
+          })
+      });
   }
 }
 
