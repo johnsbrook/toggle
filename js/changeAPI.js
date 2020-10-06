@@ -5,10 +5,12 @@ function changeAPI() {
   const promo = document.querySelector("#display");
 
   function first() {
-    document.getElementById("toggle").addEventListener("click", function (event) {
-      val = !val;
-      APIToggler();
-    });
+    document
+      .getElementById("toggle")
+      .addEventListener("click", function (event) {
+        val = !val;
+        APIToggler();
+      });
   }
 
   function APIToggler() {
@@ -22,7 +24,6 @@ function changeAPI() {
   }
 
   function callAPI(API) {
-    
     const createNode = (elem) => {
       return document.createElement(elem);
     };
@@ -30,52 +31,46 @@ function changeAPI() {
       parent.appendChild(elem);
     };
     var idNo = 0;
-    promo.innerHTML = ''
+    promo.innerHTML = "";
     products();
 
     function products() {
-   
-    fetch(API)
-      .then((res) => res.json())
-      .then((d) => {
+      fetch(API)
+        .then((res) => res.json())
+        .then((d) => {
           d.map((d) => {
             let li = createNode("li");
             let btn = createNode("button");
-            let btn2 = createNode("button");
+
             let br = createNode("br");
             let spanH = createNode("div");
             let span = createNode("span");
             let p = createNode("div");
             let image = createNode("img");
-  
-  
+
             spanH.innerText = d.product + " " + " $" + d.price;
             spanH.id = d._id;
             spanH.setAttribute("class", "add");
             p.innerText = d.description;
             (btn.innerText = "Add"), btn.setAttribute("class", "add");
             btn.setAttribute("id", d.category + (idNo += 1));
-            btn2.innerText = "More";
-            btn2.setAttribute("class", "More")
+
             image.setAttribute("src", d.image);
             image.setAttribute(
               "style",
               "width: 150px; height: auto; border-radius: 15px; margin-top: 25px;"
             );
-  
+
             appendNode(li, image);
             appendNode(li, spanH);
             appendNode(li, span);
             appendNode(li, p);
             appendNode(li, btn);
-            // appendNode(li, btn2);
             appendNode(promo, li);
-          })
-      
-        
-      });
+          });
+        });
+    }
   }
-}
 }
 
 export default changeAPI();
