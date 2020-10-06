@@ -19,8 +19,8 @@ function valToggle() {
 
 function backgroundColor() {
     if(val) {
-        document.body.setAttribute("class", "white");
+        document.body.setAttribute("class", " ");
     } else {
-        document.body.setAttribute("class", "red")
+        document.body.setAttribute("class", "bg-danger")
     }
 }
