@@ -36,7 +36,7 @@ function changeAPI() {
       .then((res) => res.json())
       .then((d) => {
           d.map((d) => {
-              
+              console.log("This is d mapped", d.product)
           })
       });
   }
