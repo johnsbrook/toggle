@@ -1,7 +1,10 @@
+import changeAPI from "./changeAPI.js";
 function onClick() {
   start();
+  changeAPI;
 
   var val = true;
+  var API;
 
   function start() {
     document.body.addEventListener("click", function (event) {
