@@ -2,7 +2,6 @@ function onClick() {
   start();
 
   var val = true;
-  var trueOrFalse = true;
 
   function start() {
     document.body.addEventListener("click", function (event) {
@@ -30,11 +29,11 @@ function onClick() {
 
   function changeValue(event) {
     console.log("Event before: ", event.target.value);
-    if(val) {
-        event.target.value = true;
+    if (val) {
+      event.target.value = true;
     }
     if (!val) {
-        event.target.value = false;
+      event.target.value = false;
     }
     console.log("Event after: ", event.target.value);
   }
