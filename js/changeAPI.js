@@ -5,7 +5,7 @@ function changeAPI() {
   const promo = document.querySelector("#display");
 
   function first() {
-    document.body.addEventListener("click", function (event) {
+    document.getElementById("toggle").addEventListener("click", function (event) {
       val = !val;
       APIToggler();
     });
@@ -56,10 +56,11 @@ function changeAPI() {
             (btn.innerText = "Add"), btn.setAttribute("class", "add");
             btn.setAttribute("id", d.category + (idNo += 1));
             btn2.innerText = "More";
+            btn2.setAttribute("class", "More")
             image.setAttribute("src", d.image);
             image.setAttribute(
               "style",
-              "width: 150px; height: auto; border-radius: 15px;"
+              "width: 150px; height: auto; border-radius: 15px; margin-top: 25px;"
             );
   
             appendNode(li, image);
@@ -67,7 +68,7 @@ function changeAPI() {
             appendNode(li, span);
             appendNode(li, p);
             appendNode(li, btn);
-            appendNode(li, btn2);
+            // appendNode(li, btn2);
             appendNode(promo, li);
           })
       

@@ -7,7 +7,8 @@ function onClick() {
   var API;
 
   function start() {
-    document.body.addEventListener("click", function (event) {
+    document.getElementById("toggle").addEventListener("click", function (event) {
+      console.log(event.target.className)
       if (event.target.className == "toggle bg-info mt-4") {
         valToggle();
         changeValue(event);
@@ -20,6 +21,14 @@ function onClick() {
     console.log("Before: ", val);
     val = !val;
     console.log("After: ", val);
+  }
+
+  function backgroundColor() {
+    if (val) {
+      document.body.setAttribute("class", " ");
+    } else {
+      document.body.setAttribute("class", "bg-danger");
+    }
   }
 
   function changeValue(event) {
