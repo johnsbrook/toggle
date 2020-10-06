@@ -3,7 +3,7 @@ function changeAPI() {
   var val = true;
   var API;
 
-  
+
   function first() {
     document.body.addEventListener("click", function (event) {
       val = !val;
@@ -18,12 +18,11 @@ function changeAPI() {
     } else {
       API = "https://coffeeproducts.herokuapp.com/api/products/tea";
     }
-    console.log(API);
-    callAPI()
+    callAPI(API)
   }
 
-  function callAPI() {
-
+  function callAPI(API) {
+    
   }
 }
 
