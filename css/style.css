@@ -3,4 +3,9 @@
     border-width: 0;
     background-color: lightblue;
     padding: 10px;
+    margin-bottom: 25px;
+}
+
+ul {
+    list-style: none;
 }
